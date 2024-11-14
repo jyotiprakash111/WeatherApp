@@ -1,91 +1,157 @@
+/* Styling for the WeatherApp component */
 
+.header-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 55%;
+  max-width: 800px;
+}
 
 .search-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow elements to wrap on smaller screens */
+}
+
+.search-container h1 {
+  margin-right: 20px;
+  text-align: center;
+  width: auto; /* Keep the width auto */
 }
 
 input[type="text"] {
-    padding: 10px;
-    font-size: 16px;
-    margin-right: 10px;
+  padding: 10px;
+  font-size: 16px;
+  margin-right: 10px;
+  width: 150px; /* Set width for larger screens */
+  height: 17px;
+  border: 1px solid #d35400;
+  /* flex: 1; */
 }
 
 button {
-    padding: 10px 20px;
-    font-size: 16px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 3px;
+  background-color: #d35400;
+  border: 1px;
+  color: white;
+  cursor: pointer;
+  height: 40px;
 }
 
 .loader {
-    margin-left: 10px;
-    border: 4px solid #f3f3f3; /* Light grey */
-    border-top: 4px solid #3498db; /* Blue */
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    animation: spin 2s linear infinite;
+  margin-left: 10px;
+  margin-top: 5px;
+  border: 4px solid #f3f3f3; /* Light grey */
+  border-top: 4px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 2s linear infinite;
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-/* Style for the table container */
+/* Styling for the table container */
 
 .table-container {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    overflow-x: auto;
-    margin-top: 20px; 
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  overflow-x: auto;
+  margin-top: 20px; /* Add some margin to separate it from the header */
+  flex-wrap: wrap; /* Allow tables to wrap on smaller screens */
 }
 
-
+/* Styling for the individual tables */
 
 .table-item {
-    flex: 0 0 auto;
-    width: 250px;
+  flex: 0 0 auto;
+  width: 250px; /* Adjusted width for smaller tables */
+  margin-bottom: 20px; /* Add some margin for spacing on smaller screens */
 }
 
 .weather-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
 
-.weather-table th, .weather-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
+.weather-table th,
+.weather-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
 }
 
 .weather-table th {
-    background-color: #f2f2f2;
-    font-weight: bold;
+  background-color: #f2f2f2;
+  font-weight: bold;
 }
 
 .weather-table tr:nth-child(even) {
-    background-color: #f9f9f9;
+  background-color: #f9f9f9;
 }
 
 .weather-table tr:hover {
-    background-color: #f1f1f1;
+  background-color: #f1f1f1;
 }
 
-
+/* Styling for the date row */
 
 .date-row {
-    background-color: orange;
+  background-color: orange;
 }
 
+/* Styling for the first row of the table */
+.weather-table tr:first-child th {
+  background-color: #e84118;
+  color: white; /* Ensure text is readable on darker background */
+}
+/* Media queries for responsive design */
 
+@media (max-width: 600px) {
+  .header-content {
+    flex-direction: column; /* Stack elements vertically on small screens */
+  }
 
-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  .search-container h1 {
+    margin-bottom: 10px;
+  }
+
+  input[type="text"] {
+    margin-bottom: 10px;
+    width: 100%; /* Full width on mobile */
+    max-width: 300px; /* Limit width on larger screens */
+  }
+
+  button {
+    width: 100%; /* Full width on mobile */
+    max-width: 150px; /* Limit width on larger screens */
+  }
+
+  .table-container {
+    justify-content: flex-start; /* Align tables to the start on small screens */
+  }
+
+  .table-item {
+    width: 100%; /* Full width on small screens */
+  }
 }

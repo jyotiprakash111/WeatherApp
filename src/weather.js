@@ -71,25 +71,26 @@ const WeatherApp = () => {
 
   return (
     <div>
-      <header>
-        <h1>Weather in your city</h1>
-        <div className='search-container'>
-          <input
-            type='text'
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
-            placeholder='Enter city name'
-          />
-          <button onClick={handleSearch}>Search</button>
-          {loading && <div className='loader'></div>}
+      <header className="header-container">
+        <div className='header-content'>
+          <h1 style={{color:"#d35400"}}>Weather in your city</h1>
+          <div className='search-container'>
+            <input
+              type='text'
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+              placeholder='Enter city name'
+            />
+            <button onClick={handleSearch}>Search</button>
+            {loading && <div className='loader'></div>}
+          </div>
         </div>
       </header>
-
+      
       {weatherData && (
         <div className='table-container'>
           {Object.keys(weatherData).map((date) => (
             <div key={date} className='table-item'>
-              
               <table className='weather-table'>
                 <tbody>
                   <tr>
