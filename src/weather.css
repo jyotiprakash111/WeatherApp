@@ -1,0 +1,91 @@
+
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.loader {
+    margin-left: 10px;
+    border: 4px solid #f3f3f3; /* Light grey */
+    border-top: 4px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Style for the table container */
+
+.table-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    overflow-x: auto;
+    margin-top: 20px; 
+}
+
+
+
+.table-item {
+    flex: 0 0 auto;
+    width: 250px;
+}
+
+.weather-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.weather-table th, .weather-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.weather-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.weather-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.weather-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+
+
+.date-row {
+    background-color: orange;
+}
+
+
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
